@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Student Mentor</title>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+  }
+  .sidebar {
+    width: 220px;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+  }
+  .sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #34495e;
+    transition: background 0.3s;
+  }
+  .sidebar nav a:hover {
+    background: #34495e;
+  }
+  .sidebar nav a i {
+    margin-right: 10px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  form {
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    margin-top: 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #219150;
+  }
+
+  .mentors-list {
+    max-width: 600px;
+  }
+
+  .mentor-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mentor-info {
+    flex-grow: 1;
+  }
+
+  .premium-section {
+    max-width: 500px;
+    border: 2px solid gold;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fffbea;
+    margin-top: 40px;
+  }
+
+  .premium-section h3 {
+    margin-top: 0;
+    color: #b8860b;
+  }
+
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">Student Panel</div>
+  <nav>
+    <a href="lessons.html"><i class="fas fa-book-open"></i> Lessons</a>
+    <a href="intern.html"><i class="fas fa-briefcase"></i> Internships</a>
+    <a href="mentor_dashboard.html"><i class="fas fa-user-friends"></i> Mentors</a>
+    <a href="chatbot.html"><i class="fas fa-robot"></i> Chatbot</a>
+    <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</aside>
+
+<main>
+  <h2>Ask a Mentor</h2>
+  <form id="questionForm">
+    <label for="studentName">Name:</label>
+    <input type="text" id="studentName" name="studentName" required />
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9+]{7,15}" placeholder="+1234567890" />
+
+    <label for="question">Your Question:</label>
+    <textarea id="question" name="question" rows="4" required></textarea>
+
+    <button type="submit">Submit Question</button>
+  </form>
+
+  <h2>Available Mentors (Offline Teaching)</h2>
+  <div class="mentors-list" id="mentorsList">
+    <!-- Mentors will be listed here -->
+  </div>
+
+  <div class="premium-section">
+    <h3>Premium Mentorship</h3>
+    <p>Want to book an offline session with a mentor? Pay here to unlock the premium mentoring service.</p>
+    <button id="payButton">Pay Now</button>
+  </div>
+</main>
+
+<script>
+  // Example mentors data (hardcoded, replace with real data or API)
+  const mentors = [
+    { id: 1, name: "Mr. John Smith", subject: "Mathematics", offlineAvailable: true },
+    { id: 2, name: "Ms. Alice Johnson", subject: "Physics", offlineAvailable: false },
+    { id: 3, name: "Dr. Emily Davis", subject: "Computer Science", offlineAvailable: true },
+    { id: 4, name: "Mr. Michael Brown", subject: "English", offlineAvailable: true },
+  ];
+
+  const mentorsList = document.getElementById("mentorsList");
+
+  // Display only mentors with offlineAvailable = true
+  function displayMentors() {
+    mentorsList.innerHTML = "";
+    mentors
+      .filter((mentor) => mentor.offlineAvailable)
+      .forEach((mentor) => {
+        const div = document.createElement("div");
+        div.className = "mentor-card";
+        div.innerHTML = `
+          <div class="mentor-info">
+            <strong>${mentor.name}</strong><br/>
+            Subject: ${mentor.subject}
+          </div>
+          <button onclick="contactMentor(${mentor.id})">Contact</button>
+        `;
+        mentorsList.appendChild(div);
+      });
+
+    if (!mentors.some(m => m.offlineAvailable)) {
+      mentorsList.innerHTML = "<p>No offline mentors available currently.</p>";
+    }
+  }
+
+  function contactMentor(id) {
+    const mentor = mentors.find(m => m.id === id);
+    alert(`You selected to contact ${mentor.name}. Please use the premium service to book offline lessons.`);
+  }
+
+  // Handle form submission
+  const questionForm = document.getElementById("questionForm");
+  questionForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = questionForm.studentName.value.trim();
+    const phone = questionForm.phoneNumber.value.trim();
+    const question = questionForm.question.value.trim();
+
+    if (!name || !phone || !question) {
+      alert("Please fill all fields.");
+      return;
+    }
+
+    // For demo: just show alert. Replace with backend submission logic.
+    alert(`Thanks ${name}! Your question has been submitted.\nWe will get back to you shortly.`);
+
+    questionForm.reset();
+  });
+
+  // Handle premium pay button
+  document.getElementById("payButton").addEventListener("click", () => {
+    alert("Redirecting to payment gateway (demo). Implement payment integration here.");
+  });
+
+  displayMentors();
+</script>
+
+</body>
+</html>

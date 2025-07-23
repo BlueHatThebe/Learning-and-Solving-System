@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f4f6fa;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1a237e;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  color: white;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a i {
+  margin-right: 10px;
+}
+
+.sidebar nav a:hover {
+  background: #3949ab;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  background: white;
+}
+
+/* Book Flex */
+.book-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.book {
+  width: 180px;
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book a {
+  display: block;
+  margin-top: 10px;
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book a:hover {
+  text-decoration: underline;
+}

@@ -1,63 +1,383 @@
+/* Reset & Layout */
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2196f3; 
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
+/* Card Containers */
+.container, .form-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    width: 100%;
+    max-width: 400px;
 }
 
+/* Headings */
 h1, h2 {
-  text-align: center;
-  color: #333;
+    margin-bottom: 25px;
+    color: #1c3d5a;
 }
 
-.mentor-section ul {
-  list-style: none;
-  padding: 0;
+/* Buttons */
+.buttons .btn,
+button {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 12px 26px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 80%;
 }
 
-.mentor-section li {
-  background: #e0e0e0;
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+.buttons .btn:hover,
+button:hover {
+    background-color: #1769aa;
+    transform: translateY(-2px);
 }
 
-.mentor-section li:hover {
-  background-color: #d4d4d4;
-}
-
+/* Form Styles */
 form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s border-color;
+}
+
+input:focus, select:focus {
+    border-color: #2196f3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1a237e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.profile h3 {
+  margin-top: 10px;
+}
+
+.sidebar nav {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #c5cae9;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.sidebar nav a i {
+  margin-right: 12px;
+}
+
+.sidebar nav a:hover {
+  background-color: #3949ab;
+  border-radius: 8px;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: auto;
+  background: #ff5252;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* Lesson Card */
+.lessons h2 {
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.lesson-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.lesson-card img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.lesson-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lesson-info h3 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.lesson-info p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tags span {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #0d47a1;
+  padding: 6px 10px;
+  border-radius: 15px;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.join-btn {
+  align-self: flex-start;
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #0d133d;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #1a237e;
+  color: white;
+  width: 240px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-input, textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
+.sidebar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-button {
-  background-color: #007bff;
+.sidebar nav a {
   color: white;
-  padding: 10px;
+  text-decoration: none;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  color: #ffc107;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content h1 {
+  color: #1a237e;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+pre {
+  background: #f0f0f0;
+  padding: 12px;
+  border-left: 4px solid #1a237e;
+  overflow-x: auto;
+}
+
+.library ul, .recommendations ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.library ul li a, .recommendations ul li a {
+  color: #1a237e;
+  text-decoration: none;
+}
+
+.library ul li a:hover {
+  text-decoration: underline;
+}
+.tags {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.tags button {
+  background-color: #1a237e;
+  color: white;
   border: none;
-  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.tags button:hover {
+  background-color: #3949ab;
 }
 
-.questions-display {
-  margin-top: 20px;
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content h1 {
+  color: #1a237e;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+pre {
+  background: #f0f0f0;
+  padding: 12px;
+  border-left: 4px solid #1a237e;
+  overflow-x: auto;
+}
+
+.library ul, .recommendations ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.library ul li a, .recommendations ul li a {
+  color: #1a237e;
+  text-decoration: none;
+}
+
+.library ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+.resources ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resources li {
+  margin: 10px 0;
+}
+
+.resources a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.resources a:hover {
+  text-decoration: underline;
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Learning Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Student Panel</div>
+      <nav>
+        <a href="student_dashboard.html"><i class="fas fa-book-open"></i> Lessons</a>
+        <a href="intern.html"><i class="fas fa-briefcase"></i> Internships</a>
+        <a href="student_mentor.html"><i class="fas fa-user-friends"></i> Mentors</a>
+        <a href="chatbot.html"><i class="fas fa-robot"></i> Chatbot</a>
+        <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Banner -->
+      <div class="banner">
+        <img src="banner.jpg" alt="Learning Banner" />
+      </div>
+
+      <!-- Lessons Section -->
+      <section class="lessons">
+        <h2>What do you want to learn today?</h2>
+        <div class="lesson-card">
+          <img src="coding.jpg" alt="Lesson" />
+          <div class="lesson-info">
+            <h3>Introduction to Web Development</h3>
+            <p>Learn the basics of building web pages using HTML, CSS, and JavaScript.</p>
+       <div class="tags">
+  <button onclick="showLesson('html')"><i class="fab fa-html5"></i> HTML</button>
+  <button onclick="showLesson('css')"><i class="fab fa-css3-alt"></i> CSS</button>
+  <button onclick="showLesson('js')"><i class="fab fa-js-square"></i> JavaScript</button>
+  <button onclick="showLesson('python')"><i class="fab fa-python"></i> Python</button>
+</div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+  function showLesson(language) {
+    switch(language) {
+      case 'html':
+        window.location.href = 'learn_html.html';
+        break;
+      case 'css':
+        window.location.href = 'learn_css.html';
+        break;
+      case 'js':
+        window.location.href = 'learn_js.html';
+        break;
+      case 'python':
+        window.location.href = 'learn_python.html';
+        break;
+      default:
+        alert('Lesson not found');
+    }
+  }
+</script>
+
+</body>
+</html>

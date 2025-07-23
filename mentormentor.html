@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentor Reply Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .message {
+      border-left: 4px solid #2831a7;
+      background: #f1f1f1;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .message strong {
+      color: #333;
+    }
+
+    .reply-box {
+      margin-top: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    button {
+      background: #2831a7;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #214388;
+    }
+
+    .answer {
+      background: #e6ffe6;
+      border-left: 4px solid #2831a7;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .no-messages {
+      text-align: center;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mentor Response Panel</h1>
+  <div class="container" id="messagesContainer">
+    <!-- Messages will appear here -->
+  </div>
+
+  <script>
+    // Simulated list of messages from students
+    const messages = [
+      { student: "Alice", question: "What is the best way to learn JavaScript?", answer: "" },
+      { student: "Bob", question: "How can I improve my resume for internships?", answer: "" },
+      { student: "Claire", question: "Can you recommend good AI courses?", answer: "" }
+    ];
+
+    const container = document.getElementById('messagesContainer');
+
+    function renderMessages() {
+      container.innerHTML = '';
+
+      if (messages.length === 0) {
+        container.innerHTML = '<p class="no-messages">No messages to display.</p>';
+        return;
+      }
+
+      messages.forEach((msg, index) => {
+        const messageEl = document.createElement('div');
+        messageEl.className = 'message';
+
+        messageEl.innerHTML = `
+          <strong>${msg.student} asks:</strong>
+          <p>${msg.question}</p>
+          ${
+            msg.answer
+              ? `<div class="answer"><strong>Your reply:</strong><p>${msg.answer}</p></div>`
+              : `
+              <div class="reply-box">
+                <textarea placeholder="Type your reply here..." rows="2" id="reply-${index}"></textarea>
+                <button onclick="sendReply(${index})">Send Reply</button>
+              </div>
+              `
+          }
+        `;
+
+        container.appendChild(messageEl);
+      });
+    }
+
+    function sendReply(index) {
+      const replyText = document.getElementById(`reply-${index}`).value.trim();
+      if (replyText === '') {
+        alert('Please enter a reply.');
+        return;
+      }
+      messages[index].answer = replyText;
+      renderMessages();
+    }
+
+    renderMessages();
+  </script>
+</body>
+</html>

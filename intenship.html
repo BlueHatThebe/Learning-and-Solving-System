@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internship Opportunities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .internship-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .internship-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .internship-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .company {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #1a73e8;
+    }
+
+    .details {
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Available Internships</h1>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search internships (e.g. Web, Data, Design)" onkeyup="filterInternships()">
+  </div>
+
+  <div class="internship-list" id="internshipList">
+    <!-- Internship cards will go here -->
+  </div>
+</div>
+
+<script>
+  const internships = [
+    {
+      company: "TechNova",
+      position: "Frontend Web Developer Intern",
+      location: "Remote",
+      description: "Work with HTML, CSS, and JavaScript to build web interfaces."
+    },
+    {
+      company: "DataSpring",
+      position: "Data Analyst Intern",
+      location: "Lesotho,LS",
+      description: "Assist in analyzing large datasets and creating reports."
+    },
+    {
+      company: "DesignHive",
+      position: "UI/UX Design Intern",
+      location: "Remote",
+      description: "Work on user-centered design projects for mobile apps."
+    },
+    {
+      company: "CloudCore",
+      position: "DevOps Intern",
+      location: "South Africa,ZA",
+      description: "Support cloud infrastructure and deployment pipelines."
+    },
+    {
+      company: "CyberGen",
+      position: "Cybersecurity Intern",
+      location: "Remote",
+      description: "Help monitor security logs and respond to threats."
+    }
+  ];
+
+  function renderInternships(list) {
+    const container = document.getElementById('internshipList');
+    container.innerHTML = "";
+
+    list.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "internship-card";
+      card.innerHTML = `
+        <div class="company">${item.company}</div>
+        <div class="position">${item.position}</div>
+        <div class="details"><strong>Location:</strong> ${item.location}</div>
+        <div class="details"><strong>Description:</strong> ${item.description}</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function filterInternships() {
+    const keyword = document.getElementById("searchInput").value.toLowerCase();
+    const filtered = internships.filter(item =>
+      item.company.toLowerCase().includes(keyword) ||
+      item.position.toLowerCase().includes(keyword) ||
+      item.description.toLowerCase().includes(keyword)
+    );
+    renderInternships(filtered);
+  }
+
+  // Initial render
+  renderInternships(internships);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentorship Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mentorship Portal</h1>
+
+    <div class="mentor-section">
+      <h2>Select a Mentor</h2>
+      <ul id="mentorList">
+        <li data-mentor="Alice">👩 Alice - Data Science</li>
+        <li data-mentor="Bob">🧑 Bob - Web Development</li>
+        <li data-mentor="Carol">👩‍💻 Carol - AI/ML</li>
+      </ul>
+    </div>
+
+    <div class="question-section">
+      <h2>Ask a Question</h2>
+      <form id="questionForm">
+        <label for="selectedMentor">Mentor:</label>
+        <input type="text" id="selectedMentor" name="selectedMentor" readonly required />
+
+        <label for="question">Your Question:</label>
+        <textarea id="question" name="question" required></textarea>
+
+        <button type="submit">Submit Question</button>
+      </form>
+    </div>
+
+    <div class="questions-display">
+      <h2>Submitted Questions</h2>
+      <div id="questionsList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

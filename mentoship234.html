@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mentorship Q&A</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .qa-section {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .question {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f1f1f1;
+      border-left: 4px solid #007bff;
+    }
+
+    .answer {
+      margin-top: 10px;
+      padding: 10px;
+      background: #e6ffe6;
+      border-left: 4px solid #28a745;
+    }
+
+    .response-box {
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+s
+    .form-container {
+      background-color: #fff;
+      max-width: 400px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+
+  <div class="form-container">
+    <h2>Student Form</h2>
+    <form id="studentForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="studentName" required />
+
+     <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required placeholder="e.g. 9876543210"/>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="successMessage" class="success" style="display: none;">
+      Form submitted successfully!
+    </div>
+  </div>
+  <script>
+    document.getElementById('studentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you'd normally send the form data to a server
+
+      // For now, just show a success message
+      document.getElementById('successMessage').style.display = 'block';
+
+      // Optionally clear the form
+      this.reset();
+    });
+  </script>
+  <h1>Mentorship Q&A</h1>
+
+  <div class="qa-section">
+    <h2>Ask a Mentor</h2>
+    <input type="text" id="studentName" placeholder="Your name..." />
+    <textarea id="questionText" placeholder="Type your question here..." rows="4"></textarea>
+    <button onclick="submitQuestion()">Submit Question</button>
+
+    <div id="qaArea"></div>
+  </div>
+
+  <script>
+    function submitQuestion() {
+      const name = document.getElementById('studentName').value.trim();
+      const question = document.getElementById('questionText').value.trim();
+
+      if (!name || !question) {
+        alert("Please enter both name and question.");
+        return;
+      }
+
+      const qaArea = document.getElementById('qaArea');
+
+      const questionDiv = document.createElement('div');
+      questionDiv.className = 'question';
+      questionDiv.innerHTML = `<strong>${name} asks:</strong><br>${question}`;
+
+      const answerDiv = document.createElement('div');
+      answerDiv.className = 'answer hidden';
+      answerDiv.innerHTML = `<strong>Mentor replies:</strong><br><span class="answerText"></span>`;
+
+      const responseBox = document.createElement('div');
+      responseBox.className = 'response-box';
+      responseBox.innerHTML = `
+        <textarea placeholder="Type your reply..." rows="2" class="replyInput"></textarea>
+        <button onclick="postReply(this)">Reply</button>
+      `;
+
+      qaArea.appendChild(questionDiv);
+      qaArea.appendChild(responseBox);
+      qaArea.appendChild(answerDiv);
+
+      // Clear form
+      document.getElementById('studentName').value = '';
+      document.getElementById('questionText').value = '';
+    }
+
+    function postReply(button) {
+      const replyInput = button.previousElementSibling;
+      const answerText = replyInput.value.trim();
+      if (!answerText) {
+        alert("Please type a reply.");
+        return;
+      }
+
+      const answerDiv = button.parentElement.nextElementSibling;
+      answerDiv.querySelector('.answerText').innerText = answerText;
+      answerDiv.classList.remove('hidden');
+
+      // Hide reply box after posting
+      button.parentElement.remove();
+    }
+  </script>
+</body>
+</html>

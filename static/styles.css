@@ -1,0 +1,19 @@
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.user-message {
+    background-color: #3b82f6;
+    color: white;
+    margin-left: auto;
+}
+.bot-message {
+    background-color: #e5e7eb;
+    color: black;
+}
+.dark .bot-message {
+    background-color: #4b5563;
+    color: white;
+}

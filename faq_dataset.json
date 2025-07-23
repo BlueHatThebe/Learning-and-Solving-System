@@ -1,0 +1,428 @@
+{
+  "html": [
+    {
+      "question": "What is HTML?",
+      "answer": "HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages."
+    },
+    {
+      "question": "How do you create a heading in HTML?",
+      "answer": "Use <h1> to <h6> tags, where <h1> is the largest heading and <h6> is the smallest. Example: <h1>My Heading</h1>."
+    },
+    {
+      "question": "What is the purpose of the <title> tag?",
+      "answer": "The <title> tag sets the title of the webpage, shown in the browser tab or title bar."
+    },
+    {
+      "question": "How do you create a paragraph in HTML?",
+      "answer": "Use the <p> tag. Example: <p>This is a paragraph.</p>."
+    },
+    {
+      "question": "How do you create a hyperlink in HTML?",
+      "answer": "Use the <a> tag with the href attribute. Example: <a href='https://example.com'>Click here</a>."
+    },
+    {
+      "question": "What is an HTML attribute?",
+      "answer": "Attributes provide additional information about an element, like id or class, written inside the opening tag."
+    },
+    {
+      "question": "How do you insert an image in HTML?",
+      "answer": "Use the <img> tag with the src attribute. Example: <img src='image.jpg' alt='description'>."
+    },
+    {
+      "question": "What is the difference between <div> and <span>?",
+      "answer": "<div> is a block-level container, while <span> is an inline container."
+    },
+    {
+      "question": "How do you create a list in HTML?",
+      "answer": "Use <ul> for unordered (bulleted) lists or <ol> for ordered (numbered) lists, with <li> for items."
+    },
+    {
+      "question": "What is semantic HTML?",
+      "answer": "Semantic HTML uses tags like <header>, <footer>, and <article> to give meaning to content."
+    },
+    {
+      "question": "How do you add a comment in HTML?",
+      "answer": "Use <!-- and -->. Example: <!-- This is a comment -->."
+    },
+    {
+      "question": "What is the purpose of the alt attribute?",
+      "answer": "The alt attribute provides alternative text for images if they fail to load or for accessibility."
+    },
+    {
+      "question": "How do you create a table in HTML?",
+      "answer": "Use <table>, <tr> for rows, <th> for headers, and <td> for data cells."
+    },
+    {
+      "question": "What is the <body> tag used for?",
+      "answer": "The <body> tag contains the visible content of a webpage, like text, images, and links."
+    },
+    {
+      "question": "How do you link a CSS file to HTML?",
+      "answer": "Use the <link> tag in the <head>. Example: <link rel='stylesheet' href='styles.css'>."
+    },
+    {
+      "question": "What is the <meta> tag used for?",
+      "answer": "The <meta> tag provides metadata about the HTML document, like charset or viewport settings."
+    },
+    {
+      "question": "How do you create a form in HTML?",
+      "answer": "Use the <form> tag with input elements like <input> or <textarea>. Example: <form action='/submit'><input type='text'></form>."
+    },
+    {
+      "question": "What is the purpose of the <head> tag?",
+      "answer": "The <head> tag contains metadata, links to stylesheets, and scripts that are not directly visible."
+    },
+    {
+      "question": "How do you add a line break in HTML?",
+      "answer": "Use the <br> tag. Example: First line<br>Second line."
+    },
+    {
+      "question": "What is the role of the DOCTYPE declaration?",
+      "answer": "The <!DOCTYPE html> declaration at the start of an HTML file specifies the document type and version."
+    },
+    {
+      "question": "How do you create a button in HTML?",
+      "answer": "Use the <button> tag. Example: <button>Click me</button>."
+    },
+    {
+      "question": "What is the <section> tag used for?",
+      "answer": "The <section> tag groups related content, often with a heading, for semantic structure."
+    },
+    {
+      "question": "How do you embed a video in HTML?",
+      "answer": "Use the <video> tag with the src attribute. Example: <video src='video.mp4' controls></video>."
+    },
+    {
+      "question": "What is the difference between inline and block elements?",
+      "answer": "Block elements (e.g., <div>) take full width and start on a new line; inline elements (e.g., <span>) flow within text."
+    },
+    {
+      "question": "How do you create a dropdown menu in HTML?",
+      "answer": "Use the <select> tag with <option> tags. Example: <select><option>Item 1</option><option>Item 2</option></select>."
+    },
+    {
+      "question": "What is the purpose of the id attribute?",
+      "answer": "The id attribute provides a unique identifier for an element, used for CSS or JavaScript targeting."
+    },
+    {
+      "question": "How do you add a favicon to a webpage?",
+      "answer": "Use the <link> tag with rel='icon'. Example: <link rel='icon' href='favicon.ico'>."
+    },
+    {
+      "question": "What is the <article> tag used for?",
+      "answer": "The <article> tag represents independent, self-contained content, like a blog post."
+    },
+    {
+      "question": "How do you create a horizontal rule in HTML?",
+      "answer": "Use the <hr> tag to add a thematic break or horizontal line."
+    },
+    {
+      "question": "What is the purpose of the class attribute?",
+      "answer": "The class attribute groups elements for styling or scripting, allowing multiple elements to share the same class."
+    },
+    {
+      "question": "How do you embed audio in HTML?",
+      "answer": "Use the <audio> tag with the src attribute. Example: <audio src='sound.mp3' controls></audio>."
+    },
+    {
+      "question": "What is the <nav> tag used for?",
+      "answer": "The <nav> tag defines a block of navigation links, like a menu."
+    },
+    {
+      "question": "How do you create a checkbox in HTML?",
+      "answer": "Use the <input> tag with type='checkbox'. Example: <input type='checkbox' name='option'>."
+    },
+    {
+      "question": "What is the purpose of the lang attribute?",
+      "answer": "The lang attribute specifies the language of an element’s content, like lang='en' for English."
+    },
+    {
+      "question": "How do you set the character encoding in HTML?",
+      "answer": "Use the <meta> tag with charset. Example: <meta charset='UTF-8'>."
+    }
+  ],
+  "css": [
+    {
+      "question": "What is CSS?",
+      "answer": "CSS stands for Cascading Style Sheets. It styles the appearance of HTML content."
+    },
+    {
+      "question": "How do you change the text color in CSS?",
+      "answer": "Use the color property. Example: color: blue;."
+    },
+    {
+      "question": "What is a class selector?",
+      "answer": "A class selector targets elements with a specific class using a dot. Example: .myClass { }."
+    },
+    {
+      "question": "How do you select an element by ID in CSS?",
+      "answer": "Use the # symbol followed by the ID. Example: #myId { }."
+    },
+    {
+      "question": "What is the difference between margin and padding?",
+      "answer": "Margin is the space outside an element; padding is the space inside, between content and border."
+    },
+    {
+      "question": "How do you center an element horizontally?",
+      "answer": "Use margin: 0 auto; with a set width on a block element."
+    },
+    {
+      "question": "What is the CSS box model?",
+      "answer": "The box model includes content, padding, border, and margin around an element."
+    },
+    {
+      "question": "How do you set a background color?",
+      "answer": "Use the background-color property. Example: background-color: green;."
+    },
+    {
+      "question": "What are media queries?",
+      "answer": "Media queries apply styles based on conditions like screen size. Example: @media (max-width: 600px) { }."
+    },
+    {
+      "question": "How do you make text bold in CSS?",
+      "answer": "Use font-weight: bold; or font-weight: 700;."
+    },
+    {
+      "question": "What is flexbox?",
+      "answer": "Flexbox is a CSS layout model for arranging items in a container flexibly."
+    },
+    {
+      "question": "How do you hide an element in CSS?",
+      "answer": "Use display: none; to remove it or visibility: hidden; to hide without removing space."
+    },
+    {
+      "question": "What is a pseudo-class?",
+      "answer": "A pseudo-class styles elements in specific states, like :hover or :active."
+    },
+    {
+      "question": "How do you change font size in CSS?",
+      "answer": "Use the font-size property. Example: font-size: 16px;."
+    },
+    {
+      "question": "What is the purpose of z-index?",
+      "answer": "z-index controls the stacking order of overlapping elements; higher values are in front."
+    },
+    {
+      "question": "How do you set a background image in CSS?",
+      "answer": "Use the background-image property. Example: background-image: url('image.jpg');."
+    },
+    {
+      "question": "What is the difference between relative and absolute positioning?",
+      "answer": "Relative positioning moves an element relative to its normal position; absolute moves it relative to its nearest positioned ancestor."
+    },
+    {
+      "question": "How do you create a CSS grid?",
+      "answer": "Use display: grid; and define columns/rows with grid-template-columns and grid-template-rows."
+    },
+    {
+      "question": "How do you apply styles to a specific HTML element type?",
+      "answer": "Use the element name as the selector. Example: p { color: black; }."
+    },
+    {
+      "question": "What is the box-sizing property?",
+      "answer": "box-sizing defines how width and height are calculated. Example: box-sizing: border-box; includes padding and border."
+    },
+    {
+      "question": "How do you create a hover effect in CSS?",
+      "answer": "Use the :hover pseudo-class. Example: button:hover { background-color: blue; }."
+    },
+    {
+      "question": "What is the purpose of the float property?",
+      "answer": "Float positions an element to the left or right, allowing content to wrap around it."
+    },
+    {
+      "question": "How do you set font family in CSS?",
+      "answer": "Use the font-family property. Example: font-family: Arial, sans-serif;."
+    },
+    {
+      "question": "What is a CSS reset?",
+      "answer": "A CSS reset removes default browser styling to ensure consistency across browsers."
+    },
+    {
+      "question": "How do you make an element transparent in CSS?",
+      "answer": "Use the opacity property. Example: opacity: 0.5;."
+    },
+    {
+      "question": "What is the display property in CSS?",
+      "answer": "The display property controls layout behavior, like block, inline, or flex."
+    },
+    {
+      "question": "How do you create a rounded corner in CSS?",
+      "answer": "Use the border-radius property. Example: border-radius: 10px;."
+    },
+    {
+      "question": "What is the purpose of the overflow property?",
+      "answer": "Overflow controls how content is handled if it exceeds an element’s size, like hidden or scroll."
+    },
+    {
+      "question": "How do you vertically center an element with flexbox?",
+      "answer": "Use display: flex; and align-items: center; on the parent container."
+    },
+    {
+      "question": "What is a CSS variable?",
+      "answer": "A CSS variable stores reusable values. Example: :root { --main-color: blue; } and use with var(--main-color)."
+    },
+    {
+      "question": "How do you apply multiple classes to an element?",
+      "answer": "List classes in the class attribute, separated by spaces. Example: <div class='class1 class2'>."
+    },
+    {
+      "question": "What is the purpose of the transition property?",
+      "answer": "Transition creates smooth changes for properties like color. Example: transition: color 0.3s;."
+    },
+    {
+      "question": "How do you style the first child of an element?",
+      "answer": "Use the :first-child pseudo-class. Example: li:first-child { color: red; }."
+    },
+    {
+      "question": "What is the difference between inline-block and block?",
+      "answer": "Inline-block allows elements to sit inline but respect width/height; block takes full width and starts on a new line."
+    },
+    {
+      "question": "How do you create a shadow effect in CSS?",
+      "answer": "Use the box-shadow property. Example: box-shadow: 2px 2px 5px rgba(0,0,0,0.3);."
+    }
+  ],
+  "javascript": [
+    {
+      "question": "What is JavaScript?",
+      "answer": "JavaScript is a programming language that adds interactivity to web pages."
+    },
+    {
+      "question": "How do you declare a variable in JavaScript?",
+      "answer": "Use var, let, or const. Example: let name = 'John';."
+    },
+    {
+      "question": "How do you write a comment in JavaScript?",
+      "answer": "Use // for single-line or /* */ for multi-line comments."
+    },
+    {
+      "question": "What is a function in JavaScript?",
+      "answer": "A function is a reusable block of code. Example: function sayHi() { alert('Hi'); }."
+    },
+    {
+      "question": "What is the difference between let and var?",
+      "answer": "let has block scope, while var has function scope; let prevents redeclaration."
+    },
+    {
+      "question": "How do you create an array in JavaScript?",
+      "answer": "Use square brackets. Example: let colors = ['red', 'blue'];."
+    },
+    {
+      "question": "What is the DOM?",
+      "answer": "The Document Object Model (DOM) is a representation of HTML elements as objects in JavaScript."
+    },
+    {
+      "question": "How do you select an element by ID in JavaScript?",
+      "answer": "Use document.getElementById('idName');."
+    },
+    {
+      "question": "What is an event in JavaScript?",
+      "answer": "An event is an action (like a click) that JavaScript can respond to."
+    },
+    {
+      "question": "How do you loop through an array?",
+      "answer": "Use a for loop or forEach. Example: array.forEach(item => console.log(item));."
+    },
+    {
+      "question": "What is a string in JavaScript?",
+      "answer": "A string is a sequence of characters, like 'hello', enclosed in quotes."
+    },
+    {
+      "question": "How do you handle errors in JavaScript?",
+      "answer": "Use try-catch blocks. Example: try { /* code */ } catch (error) { console.log(error); }."
+    },
+    {
+      "question": "What is the difference between == and ===?",
+      "answer": "== compares value after type coercion; === compares value and type strictly."
+    },
+    {
+      "question": "How do you add an element to the DOM?",
+      "answer": "Use methods like appendChild() or innerHTML after creating it with createElement()."
+    },
+    {
+      "question": "What are template literals?",
+      "answer": "Template literals use backticks for strings with embedded expressions. Example: `Hello, ${name}`."
+    },
+    {
+      "question": "What is a JavaScript object?",
+      "answer": "An object is a collection of key-value pairs. Example: let person = { name: 'John', age: 30 };."
+    },
+    {
+      "question": "How do you add an event listener in JavaScript?",
+      "answer": "Use addEventListener. Example: element.addEventListener('click', () => alert('Clicked'));."
+    },
+    {
+      "question": "What is the purpose of the console.log() method?",
+      "answer": "console.log() outputs data to the browser’s console for debugging."
+    },
+    {
+      "question": "How do you merge two arrays in JavaScript?",
+      "answer": "Use the spread operator or concat(). Example: let newArray = [...array1, ...array2];."
+    },
+    {
+      "question": "What is a callback function?",
+      "answer": "A callback is a function passed as an argument to another function to be executed later."
+    },
+    {
+      "question": "How do you check if a variable is undefined?",
+      "answer": "Use typeof or compare with undefined. Example: if (typeof variable === 'undefined') { }."
+    },
+    {
+      "question": "What is the purpose of the setTimeout function?",
+      "answer": "setTimeout delays code execution. Example: setTimeout(() => console.log('Delayed'), 1000);."
+    },
+    {
+      "question": "How do you convert a string to a number?",
+      "answer": "Use parseInt() for integers or parseFloat() for decimals. Example: parseInt('123');."
+    },
+    {
+      "question": "What is a JavaScript closure?",
+      "answer": "A closure is a function that retains access to its outer scope’s variables even after the outer function finishes."
+    },
+    {
+      "question": "How do you select multiple elements in JavaScript?",
+      "answer": "Use document.querySelectorAll(). Example: document.querySelectorAll('.className');."
+    },
+    {
+      "question": "What is the difference between null and undefined?",
+      "answer": "null is an assigned value meaning 'no value'; undefined means a variable is declared but not assigned."
+    },
+    {
+      "question": "How do you create a conditional statement?",
+      "answer": "Use if, else if, and else. Example: if (x > 0) { console.log('Positive'); } else { console.log('Not positive'); }."
+    },
+    {
+      "question": "What is the purpose of the JSON.parse() method?",
+      "answer": "JSON.parse() converts a JSON string into a JavaScript object."
+    },
+    {
+      "question": "How do you remove an element from an array?",
+      "answer": "Use methods like splice() or filter(). Example: array.splice(index, 1);."
+    },
+    {
+      "question": "What is the arrow function syntax?",
+      "answer": "Arrow functions use =>. Example: const add = (a, b) => a + b;."
+    },
+    {
+      "question": "How do you get the length of an array?",
+      "answer": "Use the length property. Example: array.length;."
+    },
+    {
+      "question": "What is the purpose of the this keyword?",
+      "answer": "this refers to the object that owns the executing code, often the calling object."
+    },
+    {
+      "question": "How do you check if an element exists in an array?",
+      "answer": "Use includes() or indexOf(). Example: array.includes('value');."
+    },
+    {
+      "question": "What is the purpose of the return statement?",
+      "answer": "return specifies the value a function outputs and stops its execution."
+    },
+    {
+      "question": "How do you change an element’s text content?",
+      "answer": "Use textContent or innerText. Example: element.textContent = 'New text';."
+    }
+  ]
+}
